@@ -1,4 +1,5 @@
 package trustwallet;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -37,7 +38,7 @@ public class TrustWallet_TC_001_OpenApp extends BaseTest {
 			@Test(groups = {"Smoke"})
 			public void openTheApp () throws IOException, InterruptedException {
 			
-			FileReader reader=new FileReader(System.getProperty("user.dir")+"\\Config.properties");  
+			FileReader reader= new FileReader(System.getProperty("user.dir") + File.separator + "Config.properties");
 			Properties p=new Properties();  
 			p.load(reader); 
 			

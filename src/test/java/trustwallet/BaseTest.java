@@ -41,14 +41,22 @@ public class BaseTest {
 		//Implementing properties concept
 		System.getProperty("user.dir");
 		System.out.println(System.getProperty("user.dir"));
-		FileReader reader=new FileReader(System.getProperty("user.dir")+"\\Config.properties");  
+		System.out.println(System.getProperty("user.home"));
+		
+		//FileReader reader=new FileReader(System.getProperty("user.dir")+"\\Config.properties");  
+		
+		FileReader reader = new FileReader(System.getProperty("user.dir") + File.separator + "Config.properties");
+
 
 		Properties p=new Properties();  
 		p.load(reader);  
 		System.out.println(p.getProperty("App"));
 		System.out.println(p.getProperty("device"));
 		
-		File appDir = new File("src\\APKS\\");
+		//File appDir = new File("src\\APKS\\");
+		
+		File appDir = new File("src" + File.separator + "APKS" + File.separator);
+
 		File app = new File(appDir, p.getProperty("App"));    //Getting app name from properties file
 		DesiredCapabilities  DC = new DesiredCapabilities();
 		
@@ -84,16 +92,32 @@ public class BaseTest {
 		boolean flag = CheckIfServerIsRunning(4723);
 
 		if (!flag) {
-			service = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().withAppiumJS
-					//(new File("C:\\Windows\\System32\\node_modules\\appium\\build\\lib\\main.js")));
-					(new File("C:\\Users\\paart\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js")));
+			
+			// With Hardcoded path
+			/*
+			 * service = AppiumDriverLocalService.buildService(new
+			 * AppiumServiceBuilder().withAppiumJS //(new
+			 * File("C:\\Windows\\System32\\node_modules\\appium\\build\\lib\\main.js")));
+			 * (new File(
+			 * "C:\\Users\\paart\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"
+			 * )));
+			 */
+			
+			// Without Hard coded path
+			
+			String appiumJsPath = System.getProperty("user.home") + File.separator + "AppData" + File.separator + "Roaming" + File.separator + "npm" + File.separator + "node_modules" + File.separator + "appium" + File.separator + "build" + File.separator + "lib" + File.separator + "main.js";
+			File appiumJsFile = new File(appiumJsPath);
+
+			service = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().withAppiumJS(appiumJsFile));
+
 			service.start();
 		}
 		return service;   
 	}
 	
 	public static void startEmulator() throws IOException, InterruptedException {
-		Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\src\\Utilities\\startEmulator.bat");
+		//Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\src\\Utilities\\startEmulator.bat");
+		Runtime.getRuntime().exec(System.getProperty("user.dir") + File.separator + "src" + File.separator + "Utilities" + File.separator + "startEmulator.bat");
 		Thread.sleep(6000);
 	}
 	
@@ -117,7 +141,8 @@ public class BaseTest {
 	public static String getScreenshot (String testCaseName) throws IOException {
 		
 		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		String destinationFile = System.getProperty("user.dir") + "//Reports//Screenshots//" +testCaseName +".png";
+		//String destinationFile = System.getProperty("user.dir") + "//Reports//Screenshots//" +testCaseName +".png";
+		String destinationFile = System.getProperty("user.dir") + File.separator + "Reports" + File.separator + "Screenshots" + File.separator + testCaseName + ".png";
 		FileUtils.copyFile(src,new File(destinationFile));
 		return destinationFile;
 		
