@@ -49,7 +49,8 @@ To install the project, follow these steps:
 4. Create an AVD - Android Virtual Device in Android Studio or connect your real device to your computer and ensure that USB debugging is enabled.
 5. Open the congig.properties file in the add the name of the AVD created in Step 4 as a value for the key "device".
 
-Optional: If you want the avd to launch automatically when you run the test script without having an open device
+Optional: If you want the AVD to launch automatically when you run the test script without having an open the AVD manually then follow the below steps 
+IGNORE the below steps if you are going to open your AVD manually and run the testscript
 
 6. Open the startEmulator.bat file present in  Src -> Utilities on Notepad++ and change the value of the AVD present in the file to the one created on step 4
 7. Open the startEmulator.bat file present in  Src -> Utilities on Notepad++ and Replace the path of the emulator in the SDK Path 
@@ -64,8 +65,8 @@ Usage
 To use the automation script, follow these steps:
 
 ====================================================================
-1. Open the AVD create on the Android Studio.
-2. Navigate to the Path src -> test -> java -> trustwallet -> TrustWallet_TC_001_OpenApp.java file
+1. Open the AVD created on the Android Studio.
+2. Navigate to the Path src/test/java/com/wallet/crypto/trustapp/testscripts/trustwallet/TrustWallet_TC_001_OpenApp.java file
 3. Right click on the file and run as TestNg Test
 
 ====================================================================
