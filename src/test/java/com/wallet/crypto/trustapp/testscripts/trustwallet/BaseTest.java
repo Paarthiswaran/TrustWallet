@@ -1,4 +1,4 @@
-package trustwallet;
+package com.wallet.crypto.trustapp.testscripts.trustwallet;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -117,7 +117,7 @@ public class BaseTest {
 	
 	public static void startEmulator() throws IOException, InterruptedException {
 		//Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\src\\Utilities\\startEmulator.bat");
-		Runtime.getRuntime().exec(System.getProperty("user.dir") + File.separator + "src" + File.separator + "Utilities" + File.separator + "startEmulator.bat");
+		Runtime.getRuntime().exec(System.getProperty("user.dir") + File.separator + "src" + File.separator + "startEmulator.bat");
 		Thread.sleep(6000);
 	}
 	

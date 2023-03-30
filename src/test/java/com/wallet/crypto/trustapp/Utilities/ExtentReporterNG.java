@@ -1,4 +1,4 @@
-package Utilities;
+package com.wallet.crypto.trustapp.Utilities;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

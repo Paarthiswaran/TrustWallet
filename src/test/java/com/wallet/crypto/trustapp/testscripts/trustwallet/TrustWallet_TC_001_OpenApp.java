@@ -1,4 +1,4 @@
-package trustwallet;
+package com.wallet.crypto.trustapp.testscripts.trustwallet;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,10 +11,11 @@ import java.util.concurrent.TimeUnit;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.wallet.crypto.trustapp.pages_or_screens.TrustWallet_SignUp_Screen;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.touch.offset.PointOption;
-import pages_or_screens.TrustWallet_SignUp_Screen;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;

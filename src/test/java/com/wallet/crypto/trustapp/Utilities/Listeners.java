@@ -1,4 +1,4 @@
-package Utilities;
+package com.wallet.crypto.trustapp.Utilities;
 
 import java.io.IOException;
 
@@ -9,8 +9,9 @@ import org.testng.ITestResult;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+import com.wallet.crypto.trustapp.testscripts.trustwallet.*;
 
-public class Listeners extends base implements ITestListener {
+public class Listeners extends BaseTest implements ITestListener {
 
 	ExtentReports extent = ExtentReporterNG.getReporterObject();
 	ExtentTest test;

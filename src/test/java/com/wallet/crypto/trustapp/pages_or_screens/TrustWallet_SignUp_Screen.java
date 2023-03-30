@@ -1,4 +1,4 @@
-package pages_or_screens;
+package com.wallet.crypto.trustapp.pages_or_screens;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -18,11 +18,12 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.clipboard.HasClipboard;
 import io.appium.java_client.touch.offset.PointOption;
-import trustwallet.BaseTest;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
+import com.wallet.crypto.trustapp.*;
+import com.wallet.crypto.trustapp.testscripts.trustwallet.*;
 
 public class TrustWallet_SignUp_Screen extends BaseTest {
 	
